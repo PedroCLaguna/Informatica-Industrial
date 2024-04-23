@@ -268,7 +268,47 @@ void caballo(mov r)
 	glutSolidTorus(0.1, 0.75, 20, 20);
 	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
 }
+void alfil(mov r)
+{
+	int i = 0;
+	//Cabeza
+	glTranslatef(r.x, 2.5, r.z);
+	glutSolidSphere(0.2, 20, 20);
+	glTranslatef(0, -0.1, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.6, 1, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.6, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.4, 0);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.5, 0.9, 20, 20);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
 
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	//Cuerpo
+	for (i = 0; i < 10; i++)
+	{
+		glTranslatef(0, -0.1, 0);
+		glutSolidSphere(0.3, 20, 20);
+	}
+	//Pie
+	glTranslatef(0, -0.15, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.15, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.2, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.6, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+}
 void Mueve(camara e)
 {
 	gluLookAt(e.x, e.y, e.z, // posicion del ojo
@@ -319,6 +359,7 @@ void OnDraw(void)
 	rey(movrey);
 	peon(movpeon);
 	caballo(movcaballo);
+	
 
 
 
