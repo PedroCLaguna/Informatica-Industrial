@@ -309,6 +309,113 @@ void alfil(mov r)
 	glutSolidTorus(0.15, 0.6, 20, 20);
 	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
 }
+
+void torre(mov r) {
+
+	int i = 0;
+
+	//Pies
+
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.3, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.4, 0);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.75, 0.6, 20, 20);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.05, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.75, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+
+	//Cuerpo
+	for (i = 1; i < 6; i++)
+	{
+		glTranslatef(0, 0.3, 0);
+		glutSolidSphere(0.6, 20, 20);
+	}
+
+	//Pies
+
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.3, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.4, 0);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.75, 0.6, 20, 20);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.05, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.75, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	//glTranslatef(0, -0.4, 0);
+}
+
+void reina1D(mov r)
+{
+	int i = 0;
+
+	glTranslatef(r.x, 0.0, r.z);
+
+	glPushMatrix();
+
+	glTranslatef(-1.0, 3.5, 7.5); // Mueve el dibujo a la posición deseada
+
+	// Poner una corona sobre la cabeza de la reina
+	glTranslatef(0, -0.3, 0); // Posicionar sobre la cabeza
+
+	// Dibujar la corona
+	glutSolidTorus(0.1, 0.3, 20, 0); // Parte inferior de la corona // el primer digito es el tamaño de la base de la corona
+	glTranslatef(0.0f, 0.0f, 0.0f); // Ajustar posición (que esten todos los circulos concentricos)
+	glutSolidTorus(0.1, 0.15, 20, 20); // Parte superior de la corona
+
+	// Parte superior de la corona
+	glutSolidCone(0.15, 0.1, 20, 20); // Picos de la corona
+	glTranslatef(0.0f, 0.0f, 0.15f); // Ajustar posición
+	glutSolidCone(0.1, 0.1, 20, 20); // Picos de la corona
+	glTranslatef(0.0f, 0.0f, -0.3f); // Ajustar posición
+	glutSolidCone(0.1, 0.1, 20, 20); // Picos de la corona
+	// Cabeza
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.6, 1, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Deshacer la rotación alrededor del eje x
+	glTranslatef(0, -0.6, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.3, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Deshacer la rotación alrededor del eje x
+	glTranslatef(0, -0.4, 0);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidCone(0.5, 0.6, 20, 20);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Deshacer la rotación alrededor del eje x
+
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.1, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Deshacer la rotación alrededor del eje x
+
+	//Cuerpo
+	for (i = 0; i < 15; i++)
+	{
+		glTranslatef(0, -0.1, 0);
+		glutSolidSphere(0.3, 20, 20);
+	}
+
+	//Pie
+	glTranslatef(0, -0.15, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.15, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.4, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glTranslatef(0, -0.2, 0);
+	glRotatef(90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+	glutSolidTorus(0.15, 0.6, 20, 20);
+	glRotatef(-90, 1.0f, 0.0f, 0.0f); // Rotar alrededor del eje x
+
+	glPopMatrix(); // Restaura la matriz de transformación origina
+}
+
 void Mueve(camara e)
 {
 	gluLookAt(e.x, e.y, e.z, // posicion del ojo
